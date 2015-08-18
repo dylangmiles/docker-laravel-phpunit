@@ -1,11 +1,22 @@
-FROM dylanlindgren/docker-phpcli:latest
+FROM debian:jessie
 
 MAINTAINER "Dylan Lindgren" <dylan.lindgren@gmail.com>
 
 WORKDIR /tmp
 
-RUN apt-get update -y && \
-    apt-get install -y wget php5-mcrypt && \
+RUN apt-get update -y \
+    && apt-get install -y \
+    php5-cli \
+    php5-mongo \
+    php5-mssql \
+    php5-mysqlnd \
+    php5-pgsql \
+    php5-redis \
+    php5-sqlite \
+    php5-gd \
+    php5-mcrypt \
+    php5-tidy \
+    wget && \
     wget https://phar.phpunit.de/phpunit.phar && \
     apt-get remove -y wget && \
     rm -rf /var/lib/apt/lists/* && \
