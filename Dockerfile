@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-MAINTAINER "Dylan Lindgren" <dylan.lindgren@gmail.com>
+MAINTAINER "Dylan Miles" <dylan.g.miles@gmail.com>
 
 WORKDIR /tmp
 
@@ -16,6 +16,7 @@ RUN apt-get update -y \
     php5-gd \
     php5-mcrypt \
     php5-tidy \
+    php5-curl \
     wget && \
     wget https://phar.phpunit.de/phpunit.phar && \
     apt-get remove -y wget && \
